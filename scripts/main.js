@@ -1,36 +1,32 @@
-// Image switcher code
-
-let myImage = document.querySelector('img');
+const myImage = document.querySelector("img");
 
 myImage.onclick = function() {
-  let mySrc = myImage.getAttribute('src');
-  if(mySrc === 'images/firefox-icon.png') {
-    myImage.setAttribute ('src','images/firefox2.png');
+  const mySrc = myImage.getAttribute("src");
+  if (mySrc === "images/OIP.JPG") {
+    myImage.setAttribute("src", "images/Dudet.JPG");
   } else {
-    myImage.setAttribute ('src','images/firefox-icon.png');
+    myImage.setAttribute("src", "images/OIP.JPG");
   }
-}
+};
 
-// Personalized welcome message code
-
-let myButton = document.querySelector('button');
-let myHeading = document.querySelector('h1');
+let myButton = document.querySelector("button");
+let myHeading = document.querySelector("h1");
 
 function setUserName() {
-  let myName = prompt('Please enter your name.');
-  if(!myName) {
+  const myName = prompt("Please enter your name.");
+  if (!myName) {
     setUserName();
   } else {
-    localStorage.setItem('name', myName);
-    myHeading.innerHTML = 'Mozilla is cool, ' + myName;
+    localStorage.setItem("name", myName);
+    myHeading.textContent = `Among us is cool, ${myName}`;
   }
 }
 
-if(!localStorage.getItem('name')) {
+if (!localStorage.getItem("name")) {
   setUserName();
 } else {
-  let storedName = localStorage.getItem('name');
-  myHeading.innerHTML = 'Mozilla is cool, ' + storedName;
+  const storedName = localStorage.getItem("name");
+  myHeading.textContent = `Amoung Us is cool, ${storedName}`;
 }
 
 myButton.onclick = function() {
